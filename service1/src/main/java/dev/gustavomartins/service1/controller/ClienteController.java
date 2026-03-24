@@ -34,7 +34,7 @@ public class ClienteController {
         Map<String, Object> cliente = new HashMap<>();
         cliente.put("id", id);
         cliente.put("nome", "Cliente " + id);
-        cliente.put("cpf", "000.000.000-00" + id);
+        cliente.put("cpf", "000.000.000-0" + id);
         cliente.put("email", "cliente" + id + "@email.com");
         return ResponseEntity.ok(cliente);
     }
