@@ -1,0 +1,22 @@
+services:
+  cliente-service:
+    build: ./service1
+    container_name: cliente-service
+    ports:
+      - "8081:8081"
+    networks:
+      - microservices-net
+
+  contrato-service:
+    build: ./service2
+    container_name: contrato-service
+    ports:
+      - "8082:8082"
+    depends_on:
+      - cliente-service
+    networks:
+      - microservices-net
+
+networks:
+  microservices-net:
+    driver: bridge
